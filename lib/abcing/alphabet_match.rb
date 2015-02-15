@@ -5,17 +5,16 @@ module ABCing
     end
 
     def letters
-      lines
+      @files.collect do |file|
+        file_contents = File.open(file).read()
+        letter_from_line(class_name(file_contents))
+      end
     end
 
     private
 
-    def lines
-      @files.collect do |file|
-        line = File.open(file).read()
-        class_name = line.scan(/class (\w+).*$/)
-        letter_from_line(class_name.flatten.first)
-      end
+    def class_name(line)
+      line.scan(/class (\w+).*$/).flatten.first
     end
 
     def letter_from_line(class_name)
