@@ -5,13 +5,14 @@ module ABCing
     end
 
     def letters
-      @files.collect do |file|
-        file_contents = File.open(file).read()
-        class_letters(file_contents)
-      end.flatten
+      letters_from_files.flatten
     end
 
     private
+
+    def letters_from_files
+      @files.collect { |f| class_letters File.open(f).read() }
+    end
 
     def class_letters(file_contents)
       class_names(file_contents).map { |c| c[0] }
