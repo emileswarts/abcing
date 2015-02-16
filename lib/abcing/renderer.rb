@@ -1,20 +1,22 @@
 module ABCing
   class Renderer
     def initialize
-      @working_copy = ['foo/lib']
+      @app_directories = ['foo/lib']
       @test_directories = ['foo/spec']
     end
 
     def render
-      alphabet = ('a'..'z').to_a
+      alphabet = ('A'..'Z').to_a
 
-      working_copy_files = ABCing::ClassFileFinder.new(@working_copy).find
-      test_files = ABCing::ClassFileFinder.new(@test_directories).find
+      params = {
+        app_directories: @app_directories,
+        test_directories: @test_directories }
 
-      working_copy_letter_matches = ABCing::AlphabetMatch.new(working_copy_files).letters
-      test_letter_matches = ABCing::AlphabetMatch.new(test_files).letters
+      scan_results = ABCing::Scanner.new(params).results
 
-      p alphabet.join(' ')
+      p "SPEC FILES: " + scan_results.fetch(:test_scan_results).join(' ')
+      p "APP FILES: " + scan_results.fetch(:app_letter_matches).join(' ')
+      p "ALPHABET: " + alphabet.join(' ')
     end
   end
 end
