@@ -7,18 +7,18 @@ module ABCing
     def letters
       @files.collect do |file|
         file_contents = File.open(file).read()
-        letter_from_line(class_name(file_contents))
-      end
+        class_letters(file_contents)
+      end.flatten
     end
 
     private
 
-    def class_name(line)
-      line.scan(/class (\w+).*$/).flatten.first
+    def class_letters(file_contents)
+      class_names(file_contents).map { |c| c[0] }
     end
 
-    def letter_from_line(class_name)
-      class_name[0]
+    def class_names(contents)
+      contents.scan(/class (\w+).*$/).flatten
     end
   end
 end
