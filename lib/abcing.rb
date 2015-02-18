@@ -6,8 +6,8 @@ require 'abcing/alphabet_match'
 module ABCing
   class Run
     def initialize
-      @app_directories = ['foo/lib']
-      @test_directories = ['foo/spec']
+      @app_directories = ['lib', 'app']
+      @test_directories = ['spec', 'features']
     end
 
     def render
