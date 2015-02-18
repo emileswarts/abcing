@@ -63,4 +63,25 @@ describe ABCing::AlphabetMatch do
 
     expect(matcher.letters).to eq(['A'])
   end
+
+  it 'Orders letter results alphabetically' do
+    file = File.new("dummy/foo.rb", "w")
+    file.puts(<<-EOT)
+        class Cobra
+        end
+
+        class Acid
+        end
+
+        class Bee
+        end
+      EOT
+    file.close
+
+    files = ['./dummy/foo.rb']
+
+    matcher = ABCing::AlphabetMatch.new(files)
+
+    expect(matcher.letters).to eq(['A', 'B', 'C'])
+  end
 end
