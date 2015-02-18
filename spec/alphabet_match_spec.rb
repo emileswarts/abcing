@@ -11,76 +11,24 @@ describe ABCing::AlphabetMatch do
   end
 
   it 'collects 2 letters' do
-    aaa_file = File.new("dummy/aaa.rb", "w")
-    aaa_file.puts("class Aaa; end;")
-    aaa_file.close
+    class_names = ['Bar', 'Foo']
+    matcher = ABCing::AlphabetMatch.new(class_names)
 
-    ccc_file = File.new("dummy/ccc.rb", "w")
-    ccc_file.puts("class Ccc; end;")
-    ccc_file.close
-
-    files = [
-      './dummy/aaa.rb',
-      './dummy/ccc.rb']
-
-    matcher = ABCing::AlphabetMatch.new(files)
-
-    expect(matcher.letters).to eq(['A', 'C'])
-  end
-
-  it 'collects letters from multiple classes in a single file' do
-    file = File.new("dummy/foo.rb", "w")
-    file.puts(<<-EOT)
-        class Animal
-        end
-
-        class Zoo
-        end
-      EOT
-    file.close
-
-    files = ['./dummy/foo.rb']
-
-    matcher = ABCing::AlphabetMatch.new(files)
-
-    expect(matcher.letters).to eq(['A', 'Z'])
+    expect(matcher.letters).to eq(['B', 'F'])
   end
 
   it 'Only collects unique letters' do
-    file = File.new("dummy/foo.rb", "w")
-    file.puts(<<-EOT)
-        class Animal
-        end
+    class_names = ['Zoo', 'Zebra']
 
-        class Acid
-        end
-      EOT
-    file.close
+    matcher = ABCing::AlphabetMatch.new(class_names)
 
-    files = ['./dummy/foo.rb']
-
-    matcher = ABCing::AlphabetMatch.new(files)
-
-    expect(matcher.letters).to eq(['A'])
+    expect(matcher.letters).to eq(['Z'])
   end
 
   it 'Orders letter results alphabetically' do
-    file = File.new("dummy/foo.rb", "w")
-    file.puts(<<-EOT)
-        class Cobra
-        end
+    class_names = ['Cobra', 'Acid', 'Bee']
 
-        class Acid
-        end
-
-        class Bee
-        end
-      EOT
-    file.close
-
-    files = ['./dummy/foo.rb']
-
-    matcher = ABCing::AlphabetMatch.new(files)
+    matcher = ABCing::AlphabetMatch.new(class_names)
 
     expect(matcher.letters).to eq(['A', 'B', 'C'])
   end

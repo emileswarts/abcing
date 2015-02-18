@@ -5,7 +5,7 @@ module ABCing
     end
 
     def find
-      @content.scan(/class (\w+).*$/).flatten
+      @content.scan(/class (\w+).*$/).flatten.uniq
     end
   end
 end
