@@ -1,3 +1,0 @@
-class FooSpec
-
-end

@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'abcing'
+
+abcing = ABCing::Run.new
+abcing.render
