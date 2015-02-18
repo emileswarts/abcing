@@ -5,7 +5,7 @@ module ABCing
     end
 
     def letters
-      letters_from_files.flatten
+      letters_from_files.flatten.uniq
     end
 
     private

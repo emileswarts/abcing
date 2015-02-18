@@ -28,7 +28,7 @@ describe ABCing::AlphabetMatch do
     expect(matcher.letters).to eq(['A', 'C'])
   end
 
-  it 'collects multiple class names from a single file' do
+  it 'collects letters from multiple classes in a single file' do
     file = File.new("dummy/foo.rb", "w")
     file.puts(<<-EOT)
         class Animal
@@ -44,5 +44,23 @@ describe ABCing::AlphabetMatch do
     matcher = ABCing::AlphabetMatch.new(files)
 
     expect(matcher.letters).to eq(['A', 'Z'])
+  end
+
+  it 'Only collects unique letters' do
+    file = File.new("dummy/foo.rb", "w")
+    file.puts(<<-EOT)
+        class Animal
+        end
+
+        class Acid
+        end
+      EOT
+    file.close
+
+    files = ['./dummy/foo.rb']
+
+    matcher = ABCing::AlphabetMatch.new(files)
+
+    expect(matcher.letters).to eq(['A'])
   end
 end
