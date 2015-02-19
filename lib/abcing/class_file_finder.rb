@@ -25,6 +25,5 @@ module ABCing
     def files_for_directory(directory)
       Dir["#{directory}/**/*.rb"]
     end
-
   end
 end

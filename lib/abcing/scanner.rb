@@ -6,33 +6,37 @@ module ABCing
     end
 
     def results
-      { test_scan_results: test_letter_matches,
-        app_letter_matches: app_letter_matches }
+      # p class_names contents(app_files)
+      p app_class_names
+      # { test_scan_results: [],
+      #   app_letter_matches: app_class_names }
     end
 
     private
+
+    def app_class_names
+      class_names contents(app_files)
+    end
+
+
+    def contents(files)
+      files.collect { |f| File.read(f) }
+    end
+
     def app_files
-      files_finder(@app_directories)
+      files @app_directories
     end
 
     def test_files
-      files_finder(@test_directories)
+      files @test_directories
     end
 
-    def app_letter_matches
-      letter_finder app_files
+    def files(directories)
+      ABCing::ClassFileFinder.new(directories).find
     end
 
-    def test_letter_matches
-      letter_finder test_files
-    end
-
-    def files_finder(files)
-      ABCing::ClassFileFinder.new(files).find
-    end
-
-    def letter_finder(files)
-      ABCing::AlphabetMatch.new(files).letters
+    def class_names(file_contents)
+      ABCing::ClassNameFinder.new(file_contents).find
     end
   end
 end

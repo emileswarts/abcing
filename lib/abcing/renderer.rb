@@ -1,8 +1,8 @@
 module ABCing
   class Renderer
     def initialize
-      @app_directories = ['foo/lib']
-      @test_directories = ['foo/spec']
+      @app_directories = ['/Users/korpz/vagrant-dev/www/surface-view/app']
+      @test_directories = ['/Users/korpz/vagrant-dev/www/surface-view/spec']
     end
 
     def render
@@ -14,8 +14,8 @@ module ABCing
 
       scan_results = ABCing::Scanner.new(params).results
 
-      p "SPEC FILES: " + scan_results.fetch(:test_scan_results).join(' ')
-      p "APP FILES: " + scan_results.fetch(:app_letter_matches).join(' ')
+      # p "SPEC FILES: " + scan_results.fetch(:test_scan_results).join(' ')
+      # p "APP FILES: " + scan_results.fetch(:app_letter_matches).join(' ')
       p "ALPHABET: " + alphabet.join(' ')
     end
   end
