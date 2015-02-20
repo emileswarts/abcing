@@ -6,8 +6,6 @@ module ABCing
     end
 
     def render
-      alphabet = ('A'..'Z').to_a
-
       params = {
         app_directories: @app_directories,
         test_directories: @test_directories }
@@ -16,7 +14,7 @@ module ABCing
 
       p "SPEC FILES: " + scan_results.fetch(:test_scan_results).join(' ')
       p "APP FILES: " + scan_results.fetch(:app_letter_matches).join(' ')
-      p "ALPHABET: " + alphabet.join(' ')
+      # p "ALPHABET: " + alphabet.join(' ')
     end
   end
 end
