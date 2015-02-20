@@ -1,5 +1,5 @@
 module ABCing
-  class Result
+  class ColourAlphabetResult
     def initialize(params)
       @test_letters = params.fetch(:test_letters)
       @app_letters = params.fetch(:app_letters)
