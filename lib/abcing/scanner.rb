@@ -6,29 +6,38 @@ module ABCing
     end
 
     def results
-      # p class_names contents(app_files)
-      p app_class_names
-      # { test_scan_results: [],
-      #   app_letter_matches: app_class_names }
+      test_classes = []
+
+      app_class_names.each do |a|
+        @test_directories.each do |t|
+          entries = test_class_names(a)
+          test_classes << entries unless entries.empty?
+        end
+      end
+
+      result = { test_scan_results: first_letters(test_classes.flatten.uniq),
+        app_letter_matches: first_letters(app_class_names) }
+
+      p result
+      result
     end
 
     private
 
-    def app_class_names
-      class_names contents(app_files)
+    def test_class_names(app_class_name)
+      contents(test_files).collect { |e| e.scan(/^.*(#{app_class_name}).*$/) }.flatten
     end
 
+    def app_class_names
+      class_names contents(files @app_directories)
+    end
 
     def contents(files)
       files.collect { |f| File.read(f) }
     end
 
-    def app_files
-      files @app_directories
-    end
-
     def test_files
-      files @test_directories
+      files = @test_directories.collect { |dir| Dir["#{dir}/**/*.rb"] }.flatten
     end
 
     def files(directories)
@@ -37,6 +46,10 @@ module ABCing
 
     def class_names(file_contents)
       ABCing::ClassNameFinder.new(file_contents).find
+    end
+
+    def first_letters(class_names)
+      ABCing::AlphabetMatch.new(class_names).letters
     end
   end
 end
