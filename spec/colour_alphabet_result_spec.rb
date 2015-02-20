@@ -20,4 +20,16 @@ describe ABCing::ColourAlphabetResult do
     result = ABCing::ColourAlphabetResult.new(params).calculate
     expect(result).to include(A: :green, B: :red)
   end
+
+  it 'does not find an application class or test class from the letter of the alphabet' do
+    params = {
+      test_letters: [],
+      app_letters: []
+    }
+
+    result = ABCing::ColourAlphabetResult.new(params).calculate
+    expect(result).to include(A: :yellow, B: :yellow)
+  end
+
+
 end
