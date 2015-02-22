@@ -1,6 +1,7 @@
 # ABCing
 
- ![](https://badge.fury.io/rb/abcing.svg)
+[![Gem Version](https://badge.fury.io/rb/abcing.svg)](http://badge.fury.io/rb/abcing)
+
  ![abcing gem](https://s3-eu-west-1.amazonaws.com/abcing/coverage.png)
 
 Dumbed down automated test coverage metrics.
