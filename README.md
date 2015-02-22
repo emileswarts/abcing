@@ -2,8 +2,8 @@
 
 [![ABCing Gem Version](https://badge.fury.io/rb/abcing.svg)](http://badge.fury.io/rb/abcing)
 [![ABCing Travis build](https://travis-ci.org/emileswarts/ABCing.svg?branch=master)](https://travis-ci.org/emileswarts/ABCing.svg)
-
- ![abcing gem](https://s3-eu-west-1.amazonaws.com/abcing/coverage.png)
+![](http://ruby-gem-downloads-badge.herokuapp.com/abcing/0.0.2?type=total)
+![abcing gem](https://s3-eu-west-1.amazonaws.com/abcing/coverage.png)
 
 Dumbed down automated test coverage metrics.
 Checks your working directory for class names, and tries to match them in the test directories.
