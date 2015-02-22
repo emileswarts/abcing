@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Abcing::VERSION
   spec.authors       = ["Emile"]
   spec.email         = ["emile.swarts123@gmail.com"]
-  spec.summary       = %q{Dumb code metrics}
-  spec.description   = %q{See coverage by alphabet}
-  spec.homepage      = ""
+  spec.summary       = %q{Idiot code metrics}
+  spec.description   = %q{Find classes mentioned in your application but not in your test suite.}
+  spec.homepage      = "https://github.com/emileswarts/ABCing"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
