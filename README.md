@@ -1,6 +1,7 @@
 # ABCing
 
- ![alt tag](https://s3-eu-west-1.amazonaws.com/abcing/coverage.png)
+ ![](https://badge.fury.io/rb/abcing.svg)
+ ![abcing gem](https://s3-eu-west-1.amazonaws.com/abcing/coverage.png)
 
 Dumbed down automated test coverage metrics.
 Checks your working directory for class names, and tries to match them in the test directories.
@@ -48,3 +49,4 @@ Or install it yourself as:
 1. Check for presence of config file for scan params
 2. Add verbose mode that mentions the class names scanned for results
 3. Add score results
+4. Improve performance
