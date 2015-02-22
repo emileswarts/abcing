@@ -43,8 +43,4 @@ class String
   def yellow
     colorize(33)
   end
-
-  def pink
-    colorize(35)
-  end
 end
