@@ -44,4 +44,5 @@ It will check spec/ and features/ for matching class names found in the working 
 
 ## TODO
 
-1. check for presence of config file for scan params
+1. Check for presence of config file for scan params
+2. Add verbose mode that mentions the class names scanned for results
