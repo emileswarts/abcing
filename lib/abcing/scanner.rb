@@ -15,7 +15,7 @@ module ABCing
         end
       end
 
-      { test_scan_results: first_letters(test_classes.flatten.uniq),
+      { test_letter_matches: first_letters(test_classes.flatten.uniq),
         app_letter_matches: first_letters(app_class_names) }
     end
 

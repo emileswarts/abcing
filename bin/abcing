@@ -2,4 +2,6 @@
 
 require 'abcing'
 
-ABCing::Runner.new.run
+working_directory = ARGV[0] || Dir.pwd
+
+ABCing::Runner.new(working_directory).run

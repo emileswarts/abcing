@@ -6,9 +6,26 @@ module ABCing
     end
 
     def render
-      p "SPEC FILES: " + @scan_results.fetch(:test_scan_results).join(' ')
-      p "APP FILES: " + @scan_results.fetch(:app_letter_matches).join(' ')
-      p "ALPHABET: " + @alphabet.join(' ')
+      puts report
+    end
+
+    private
+
+    def report
+      coloured_letters.map do |coloured_letter, colour|
+        coloured_letter.to_s.send(colour)
+      end.join(' ')
+    end
+
+    def coloured_letters
+      test_letters = @scan_results.fetch(:test_letter_matches)
+      app_letters = @scan_results.fetch(:app_letter_matches)
+
+      params = {
+        test_letters: test_letters,
+        app_letters: app_letters }
+
+      ABCing::ColourAlphabetResult.new(params).calculate
     end
   end
 end

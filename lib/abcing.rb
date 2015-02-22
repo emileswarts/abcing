@@ -1,20 +1,20 @@
-require 'abcing/version'
-require 'abcing/scanner'
+require 'abcing/alphabet_match'
 require 'abcing/class_file_finder'
 require 'abcing/class_name_finder'
+require 'abcing/colour_alphabet_result'
 require 'abcing/renderer'
-require 'abcing/alphabet_match'
+require 'abcing/scanner'
+require 'abcing/version'
 
 module ABCing
   class Runner
-    def initialize
-      @app_directories = ['lib', 'app']
-      @test_directories = ['spec', 'features']
+    def initialize(working_dir)
+      @working_dir = working_dir
     end
 
     def run
-      app_directories = ['/Users/korpz/vagrant-dev/www/surface-view/app']
-      test_directories = ['/Users/korpz/vagrant-dev/www/surface-view/spec']
+      app_directories = ["#{@working_dir}/app", "#{@working_dir}/lib"]
+      test_directories = ["#{@working_dir}/spec", "#{@working_dir}/features"]
 
       params = {
         app_directories: app_directories,
@@ -24,5 +24,27 @@ module ABCing
 
       ABCing::Renderer.new(scan_results).render
     end
+  end
+end
+
+class String
+  def colorize(color_code)
+    "\e[#{color_code}m#{self}\e[0m"
+  end
+
+  def red
+    colorize(31)
+  end
+
+  def green
+    colorize(32)
+  end
+
+  def yellow
+    colorize(33)
+  end
+
+  def pink
+    colorize(35)
   end
 end
