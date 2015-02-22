@@ -1,6 +1,13 @@
-# Abcing
+# ABCing
 
-See coverage by alphabet
+Dumbed down automated test coverage metrics.
+Checks your working directory for class names, and tries to match them in the test directories.
+
+The way this works is:
+
+If it finds a matching class name in one of your test directories, you get a green result.
+If it finds a class name in the working directory but not in the test directory, it is printed in red.
+Other letters (not present in your working directory or test directories) are printed in yellow.
 
 ## Installation
 
@@ -20,7 +27,10 @@ Or install it yourself as:
 
 ## Usage
 
-See coverage by alphabet
+abcing /path/to/project/root
+
+Currently this only considers app/ and lib/ for the scan.
+It will check spec/ and features/ for matching class names found in the working directory.
 
 ## Contributing
 
