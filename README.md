@@ -11,6 +11,13 @@ If it finds a matching class name in one of your test directories, you get a gre
 If it finds a class name in the working directory but not in the test directory, it is printed in red.
 Other letters (not present in your working directory or test directories) are printed in yellow.
 
+## Usage
+
+    $ abcing /path/to/project/root
+
+Right now this will check /path/to/project/root/spec and /path/to/project/root/features to find test files.
+It will use app/ and lib/ to find classes that should be tested.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -27,12 +34,6 @@ Or install it yourself as:
 
     $ gem install abcing
 
-## Usage
-
-abcing /path/to/project/root
-
-Currently this only considers app/ and lib/ for the scan.
-It will check spec/ and features/ for matching class names found in the working directory.
 
 ## Contributing
 
