@@ -47,3 +47,4 @@ Or install it yourself as:
 
 1. Check for presence of config file for scan params
 2. Add verbose mode that mentions the class names scanned for results
+3. Add score results
