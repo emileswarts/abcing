@@ -1,6 +1,7 @@
 # ABCing
 
-[![Gem Version](https://badge.fury.io/rb/abcing.svg)](http://badge.fury.io/rb/abcing)
+[![ABCing Gem Version](https://badge.fury.io/rb/abcing.svg)](http://badge.fury.io/rb/abcing)
+[![ABCing Travis build](https://travis-ci.org/emileswarts/ABCing.svg?branch=master)](https://travis-ci.org/emileswarts/ABCing.svg)
 
  ![abcing gem](https://s3-eu-west-1.amazonaws.com/abcing/coverage.png)
 
