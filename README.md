@@ -1,5 +1,7 @@
 # ABCing
 
+ ![alt tag](https://s3-eu-west-1.amazonaws.com/abcing/Screen+Shot+2015-02-22+at+15.34.38.png)
+
 Dumbed down automated test coverage metrics.
 Checks your working directory for class names, and tries to match them in the test directories.
 
