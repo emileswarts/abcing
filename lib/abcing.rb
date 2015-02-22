@@ -13,15 +13,21 @@ module ABCing
     end
 
     def run
-      app_directories = ["#{@working_dir}/app", "#{@working_dir}/lib"]
-      test_directories = ["#{@working_dir}/spec", "#{@working_dir}/features"]
+      app_directories = [
+        "#{@working_dir}/app",
+        "#{@working_dir}/lib"
+      ]
+
+      test_directories = [
+        "#{@working_dir}/spec",
+        "#{@working_dir}/features"
+      ]
 
       params = {
         app_directories: app_directories,
         test_directories: test_directories }
 
       scan_results = ABCing::Scanner.new(params).results
-
       ABCing::Renderer.new(scan_results).render
     end
   end
