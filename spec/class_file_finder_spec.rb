@@ -44,8 +44,4 @@ describe ABCing::ClassFileFinder do
       expect(finder.find).to eq(expected_results)
     end
   end
-
-  context 'Error' do
-    it 'raises an exception when no files are supplied'
-  end
 end

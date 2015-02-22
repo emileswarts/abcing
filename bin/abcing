@@ -2,5 +2,4 @@
 
 require 'abcing'
 
-abcing = ABCing::Run.new
-abcing.render
+ABCing::Runner.new.run

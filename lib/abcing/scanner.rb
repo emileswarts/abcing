@@ -34,7 +34,7 @@ module ABCing
     end
 
     def test_files
-      files = @test_directories.collect { |dir| Dir["#{dir}/**/*.rb"] }.flatten
+      @test_directories.collect { |dir| Dir["#{dir}/**/*.rb"] }.flatten
     end
 
     def files(directories)
