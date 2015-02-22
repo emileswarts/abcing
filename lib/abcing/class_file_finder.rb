@@ -7,7 +7,7 @@ module ABCing
     def find
       @target_directories.collect do |dir|
         matching_files(dir)
-      end.flatten
+      end.flatten.sort
     end
 
     private
