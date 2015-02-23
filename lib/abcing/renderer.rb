@@ -13,7 +13,7 @@ module ABCing
 
     def report
       coloured_letters.map do |coloured_letter, colour|
-        coloured_letter.to_s.send(colour)
+        coloured_letter.send(colour)
       end.join(' ')
     end
 

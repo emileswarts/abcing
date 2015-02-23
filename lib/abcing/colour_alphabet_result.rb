@@ -10,7 +10,7 @@ module ABCing
       results = {}
 
       @alphabet.each do |a|
-        results[a.to_sym] = colour(a)
+        results[a] = colour(a)
       end
 
       results
