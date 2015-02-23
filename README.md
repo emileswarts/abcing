@@ -37,10 +37,13 @@ Or install it yourself as:
 
     $ gem install abcing
 
+## Run the tests
+
+    $ bundle exec rspec
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/abcing/fork )
+1. Fork it ( https://github.com/emileswarts/abcing/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -52,3 +55,4 @@ Or install it yourself as:
 2. Add verbose mode that mentions the class names scanned for results
 3. Add score results
 4. Improve performance
+5. Create badge for results to be used on github
