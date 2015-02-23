@@ -6,7 +6,9 @@ describe ABCing::ClassFileFinder do
     Dir.mkdir 'dummy'
 
     ['foo', 'bar'].each do |name|
-      File.write("dummy/#{ name }.rb", '')
+      out_file = File.new("dummy/#{ name }.rb", 'w')
+      out_file.puts("class #{ name.upcase }; end;")
+      out_file.close
     end
   end
 
@@ -25,7 +27,9 @@ describe ABCing::ClassFileFinder do
 
   context 'Excluded files' do
     it 'that do not have a .rb extension' do
-      File.write('dummy/foo_config.txt', '')
+      out_file = File.new('dummy/foo_config.txt', 'w')
+      out_file.puts('class FooConfig; end;')
+      out_file.close
 
       finder = ABCing::ClassFileFinder.new(['dummy'])
       expect(finder.find).to eq(expected_results)
