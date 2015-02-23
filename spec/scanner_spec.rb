@@ -6,8 +6,8 @@ describe ABCing::Scanner do
     scanner = ABCing::Scanner.new(params)
   end
 
-  context 'Does not scan' do
-    it 'raises an error when supplied with nil params' do
+  context 'Raises an error' do
+    it 'when supplied with nil params' do
       expect { ABCing::Scanner.new(nil) }.to raise_error()
     end
   end
