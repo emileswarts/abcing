@@ -5,22 +5,10 @@ module ABCing
     end
 
     def find
-      @target_directories.collect do |dir|
-        matching_files(dir)
-      end.flatten.sort
+      @target_directories.collect { |d| files_for_directory(d) }.flatten.sort
     end
 
     private
-
-    def matching_files(directory)
-      files_for_directory(directory).select do |f|
-        class_file? f
-      end
-    end
-
-    def class_file?(file)
-      File.read(file).include?('class ')
-    end
 
     def files_for_directory(directory)
       Dir["#{directory}/**/*.rb"]
