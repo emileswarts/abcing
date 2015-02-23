@@ -14,11 +14,11 @@ module ABCing
 
     def matching_files(directory)
       files_for_directory(directory).select do |f|
-        is_class_file? f
+        class_file? f
       end
     end
 
-    def is_class_file?(file)
+    def class_file?(file)
       File.read(file).include?('class ')
     end
 
