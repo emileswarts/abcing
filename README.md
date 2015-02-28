@@ -7,6 +7,7 @@
 
 ### Green letter
 It matches 'class Foo' in your application.
+
 It matches 'Foo' in your test suite.
 
 ### Yellow letter
@@ -14,10 +15,12 @@ There is no class name starting with that letter.
 
 ### Red letter
 It matches 'class Foo' in your application.
+
 It does not match 'Foo' in your test suite.
 
 This is also lenient in the way that it scores green letters.
 If you have defined two classes Foo, and Foosball, and you only have a test for Foo, you will still get a green letter.
+
 To get a red letter means that any class name starting with that letter is not present in your test suite.
 
 ## Usage
