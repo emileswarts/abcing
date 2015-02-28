@@ -5,14 +5,20 @@
 ![](http://ruby-gem-downloads-badge.herokuapp.com/abcing/0.0.2?type=total&color=brightgreen)
 ![abcing gem](https://s3-eu-west-1.amazonaws.com/abcing/coverage.png)
 
-Dumbed down automated test coverage metrics.
-Checks your working directory for class names, and tries to match them in the test directories.
+### Green letter
+  It matches 'class Foo' in your application.
+  It matches 'Foo' in your test suite.
 
-The way this works is:
+### Yellow letter
+  There is no class name starting with that letter.
 
-If it finds a matching class name in one of your test directories, you get a green result.
-If it finds a class name in the working directory but not in the test directory, it is printed in red.
-Other letters (not present in your working directory or test directories) are printed in yellow.
+### Red letter
+  It matches 'class Foo' in your application.
+  It does not match 'Foo' in your test suite.
+
+This is also lenient in the way that it scores green letters.
+If you have defined two classes Foo, and Foosball, and you only have a test for Foo, you will still get a green letter.
+To get a red letter means that any class name starting with that letter is not present in your test suite.
 
 ## Usage
 
