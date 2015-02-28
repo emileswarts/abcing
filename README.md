@@ -62,3 +62,4 @@ Or install it yourself as:
 3. Add score results
 4. Improve performance
 5. Create badge for results to be used on github
+6. Add strict mode
