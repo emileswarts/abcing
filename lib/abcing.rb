@@ -27,7 +27,7 @@ module ABCing
         app_directories: app_directories,
         test_directories: test_directories }
 
-      scan_results = ABCing::LetterFinder.new(params).results
+      scan_results = ABCing::Scanner.new(params).results
       ABCing::Renderer.new(scan_results).render
     end
   end
