@@ -22,7 +22,6 @@ module ABCing
     private
 
     def test_class_names(app_class_name)
-      #class name finder
       contents(test_files).collect { |e| e.scan(/^.*(#{app_class_name}).*$/) }.flatten
     end
 
