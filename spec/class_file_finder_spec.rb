@@ -5,15 +5,12 @@ require 'abcing/class_file_finder'
 describe ABCing::ClassFileFinder do
   before(:each) do
     Dir.mkdir 'dummy'
+    Dir.mkdir 'dummy/lib'
 
-    ['foo', 'bar'].each do |name|
-      out_file = File.new("dummy/#{ name }.rb", 'w')
-      out_file.puts("class #{ name.upcase }; end;")
-      out_file.close
-    end
+    create_app_files(['foo', 'bar'])
   end
 
-  let(:expected_results) { ['dummy/bar.rb', 'dummy/foo.rb'] }
+  let(:expected_results) { ['dummy/lib/bar.rb', 'dummy/lib/foo.rb'] }
 
   after(:each) do
     FileUtils.rm_rf 'dummy'
