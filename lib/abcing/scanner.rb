@@ -22,6 +22,7 @@ module ABCing
     private
 
     def test_class_names(app_class_name)
+      #class name finder
       contents(test_files).collect { |e| e.scan(/^.*(#{app_class_name}).*$/) }.flatten
     end
 
@@ -34,7 +35,7 @@ module ABCing
     end
 
     def test_files
-      @test_directories.collect { |dir| Dir["#{dir}/**/*.rb"] }.flatten
+      files @test_directories
     end
 
     def files(directories)

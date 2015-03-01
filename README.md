@@ -66,3 +66,12 @@ Or install it yourself as:
 4. Improve performance
 5. Create badge for results to be used on github
 6. Add strict mode
+
+## Overview
+
+[ Class names ] -> AlphabetMatch.letters -> [ Class letters ]
+[ Directories ] -> ClassFileFinder.find -> [ Files ]
+[ Contents ] -> ClassNameFinder.find -> [ Class names ]
+[ Test letters, App letters ] -> ColourAlphabetResult.calculate -> { colour => letter }
+Root working directory -> Runner.run -> Renderer.render
+{ Scan Results } -> Renderer.render -> IO
