@@ -1,5 +1,5 @@
 module ABCing
-  class Scanner
+  class LetterFinder
     def initialize(params)
       @app_directories = params.fetch(:app_directories)
       @test_directories = params.fetch(:test_directories)

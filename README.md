@@ -77,6 +77,8 @@ Or install it yourself as:
 
 [ Test letters, App letters ] -> ColourAlphabetResult.calculate -> { colour => letter }
 
+{ App directories, Test directories } -> LetterFinder.calculate -> { test letters, app letters }
+
 Root working directory -> Runner.run -> Renderer.render
 
 { Scan Results } -> Renderer.render -> IO
