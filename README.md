@@ -70,8 +70,13 @@ Or install it yourself as:
 ## Overview
 
 [ Class names ] -> AlphabetMatch.letters -> [ Class letters ]
+
 [ Directories ] -> ClassFileFinder.find -> [ Files ]
+
 [ Contents ] -> ClassNameFinder.find -> [ Class names ]
+
 [ Test letters, App letters ] -> ColourAlphabetResult.calculate -> { colour => letter }
+
 Root working directory -> Runner.run -> Renderer.render
+
 { Scan Results } -> Renderer.render -> IO
