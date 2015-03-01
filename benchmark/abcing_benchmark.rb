@@ -25,8 +25,6 @@ class ABCingBenchmark
   end
 end
 
-p "Testing many files"
-
 ABCingBenchmark.setup
 ABCingBenchmark.test_many_files
 ABCingBenchmark.teardown

@@ -1,4 +1,5 @@
 require_relative '../lib/abcing/scanner.rb'
+require 'spec_helper'
 
 describe ABCing::Scanner do
   let(:empty_params) do
@@ -6,7 +7,7 @@ describe ABCing::Scanner do
   end
 
   it 'scans' do
-    scanner = ABCing::Scanner.new(empty_params)
+    scanner = ABCing::Scanner.new(empty_params).results
   end
 
   context 'Raises an error' do

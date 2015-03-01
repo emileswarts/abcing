@@ -1,4 +1,5 @@
 require_relative '../lib/abcing/class_name_finder.rb'
+require 'spec_helper'
 
 describe ABCing::ClassNameFinder do
   it 'produces class names from string input' do

@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'spec_helper'
 require 'abcing/class_file_finder'
 
 describe ABCing::ClassFileFinder do

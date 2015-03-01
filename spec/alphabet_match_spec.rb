@@ -1,4 +1,4 @@
-
+require 'spec_helper'
 require_relative '../lib/abcing/alphabet_match'
 
 describe ABCing::AlphabetMatch do

@@ -1,4 +1,5 @@
 require_relative '../lib/abcing/colour_alphabet_result.rb'
+require 'spec_helper'
 
 describe ABCing::ColourAlphabetResult do
   it 'finds tested class letters' do

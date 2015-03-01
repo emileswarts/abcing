@@ -1,7 +1,7 @@
 module ABCing
   class Benchmark
     def self.setup_many_files
-      200.times do |num|
+      100.times do |num|
         ["foo_#{num}", "bar_#{num}"].each do |name|
           out_file = File.new("benchmark/dummy/lib/#{ name }.rb", 'w')
           out_file.puts("class #{ name.capitalize }; end;")
@@ -9,7 +9,7 @@ module ABCing
         end
       end
 
-      200.times do |num|
+      100.times do |num|
         ["foo_#{num}", "bar_#{num}"].each do |name|
           out_file = File.new("benchmark/dummy/spec/#{ name }.rb", 'w')
           out_file.puts("#{ name.capitalize }")

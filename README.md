@@ -4,6 +4,7 @@
 [![ABCing Travis build](https://travis-ci.org/emileswarts/ABCing.svg?branch=master)](https://travis-ci.org/emileswarts/ABCing.svg)
 ![](http://ruby-gem-downloads-badge.herokuapp.com/abcing/0.0.2?type=total&color=brightgreen)
 [![Code Climate](https://codeclimate.com/github/emileswarts/ABCing/badges/gpa.svg)](https://codeclimate.com/github/emileswarts/ABCing)
+[![Test Coverage](https://codeclimate.com/github/emileswarts/ABCing/badges/coverage.svg)](https://codeclimate.com/github/emileswarts/ABCing)
 ![abcing gem](https://s3-eu-west-1.amazonaws.com/abcing/coverage.png)
 
 ### Green letter
