@@ -33,6 +33,13 @@ describe ABCing::ClassFileFinder do
       ]
       expect(finder.find).to eq(expected_results)
     end
+
+    it 'Only tracks unique files' do
+      create_app_files(['foo'])
+      finder = ABCing::ClassFileFinder.new(['dummy'])
+
+      expect(finder.find).to eq(expected_results)
+    end
   end
 
   context 'Excluded files' do
