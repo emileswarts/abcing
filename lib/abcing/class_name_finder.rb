@@ -11,7 +11,11 @@ module ABCing
     private
 
     def class_name_lines
-      @contents.collect { |c| c.scan(class_match_regex).flatten.uniq }
+      @contents.collect { |c| scanned_class_names c }
+    end
+
+    def scanned_class_names(content)
+      content.scan(class_match_regex).flatten.uniq
     end
 
     def class_match_regex
