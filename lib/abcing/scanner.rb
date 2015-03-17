@@ -6,23 +6,22 @@ module ABCing
     end
 
     def results
-      test_classes = []
-
-      app_class_names.each do |a|
-        @test_directories.each do |t|
-          entries = test_class_names(a)
-          test_classes << entries unless entries.empty?
-        end
-      end
-
-      { test_letter_matches: first_letters(test_classes.flatten.uniq),
+      { test_letter_matches: first_letters(test_class_results.flatten.uniq),
         app_letter_matches: first_letters(app_class_names) }
     end
 
     private
 
+    def test_class_results
+      app_class_names.each do |a|
+        @test_directories.collect {|t| test_class_names a }
+      end
+    end
+
     def test_class_names(app_class_name)
-      contents(test_files).collect { |e| e.scan(/^.*(#{app_class_name}).*$/) }.flatten
+      contents(test_files).collect do |e|
+        e.scan(/^.*(#{app_class_name}).*$/)
+      end.flatten
     end
 
     def app_class_names
