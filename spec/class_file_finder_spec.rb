@@ -21,6 +21,18 @@ describe ABCing::ClassFileFinder do
       finder = ABCing::ClassFileFinder.new(['dummy'])
       expect(finder.find).to eq(expected_results)
     end
+
+    it 'Sorts found class names' do
+      create_app_files(['zzz', 'aaa'])
+      finder = ABCing::ClassFileFinder.new(['dummy'])
+      expected_results = [
+        'dummy/lib/aaa.rb',
+        'dummy/lib/bar.rb',
+        'dummy/lib/foo.rb',
+        'dummy/lib/zzz.rb'
+      ]
+      expect(finder.find).to eq(expected_results)
+    end
   end
 
   context 'Excluded files' do
