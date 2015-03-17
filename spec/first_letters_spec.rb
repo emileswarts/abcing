@@ -16,4 +16,9 @@ describe ABCing::FirstLetters do
     matcher = ABCing::FirstLetters.new(['Cobra', 'Acid', 'Bee'])
     expect(matcher.letters).to eq(['A', 'B', 'C'])
   end
+
+  it 'Returns an empty result' do
+    matcher = ABCing::FirstLetters.new([])
+    expect(matcher.letters).to eq([])
+  end
 end
