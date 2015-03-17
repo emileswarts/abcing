@@ -46,7 +46,7 @@ module ABCing
     end
 
     def first_letters(class_names)
-      ABCing::AlphabetMatch.new(class_names).letters
+      ABCing::FirstLetters.new(class_names).letters
     end
   end
 end

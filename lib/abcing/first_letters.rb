@@ -1,5 +1,5 @@
 module ABCing
-  class AlphabetMatch
+  class FirstLetters
     def initialize(class_names)
       @class_names = class_names
     end
