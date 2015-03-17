@@ -31,6 +31,4 @@ describe ABCing::ColourAlphabetResult do
     result = ABCing::ColourAlphabetResult.new(params).calculate
     expect(result).to include('A' => :yellow, 'B' => :yellow)
   end
-
-
 end
