@@ -1,10 +1,11 @@
-require 'abcing/alphabet_match'
+require 'abcing/first_letters'
 require 'abcing/class_file_finder'
 require 'abcing/class_name_finder'
 require 'abcing/colour_alphabet_result'
 require 'abcing/renderer'
 require 'abcing/scanner'
 require 'abcing/version'
+require 'monkey_patch/string'
 
 module ABCing
   class Runner
@@ -30,23 +31,5 @@ module ABCing
       scan_results = ABCing::Scanner.new(params).results
       ABCing::Renderer.new(scan_results).render
     end
-  end
-end
-
-class String
-  def colorize(color_code)
-    "\e[#{color_code}m#{self}\e[0m"
-  end
-
-  def red
-    colorize(31)
-  end
-
-  def green
-    colorize(32)
-  end
-
-  def yellow
-    colorize(33)
   end
 end
