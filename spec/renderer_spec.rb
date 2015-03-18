@@ -8,41 +8,26 @@ describe ABCing::Renderer do
     let(:green) { "\e[32m%s\e[0m" }
 
   context 'render' do
-    it 'renders all yellow results' do
+    it 'Yellow results' do
       expected_output = ('A'..'Z').map { |l| sprintf(yellow, l) }.join(' ')
-
       expect(STDOUT).to receive(:puts).with expected_output
-
-      scan_results = {
-        test_letter_matches: [],
-        app_letter_matches: []
-      }
+      scan_results = { test_letter_matches: [], app_letter_matches: [] }
 
       ABCing::Renderer.new(scan_results).render
     end
 
-    it 'renders all red results' do
+    it 'Red results' do
       expected_output = ('A'..'Z').map { |l| sprintf(red, l) }.join(' ')
-
       expect(STDOUT).to receive(:puts).with expected_output
-
-      scan_results = {
-        test_letter_matches: [],
-        app_letter_matches: ('A'..'Z')
-      }
+      scan_results = { test_letter_matches: [], app_letter_matches: ('A'..'Z') }
 
       ABCing::Renderer.new(scan_results).render
     end
 
-    it 'renders all green results' do
+    it 'Green results' do
       expected_output = ('A'..'Z').map { |l| sprintf(green, l) }.join(' ')
-
       expect(STDOUT).to receive(:puts).with expected_output
-
-      scan_results = {
-        test_letter_matches: ('A'..'Z'),
-        app_letter_matches: ('A'..'Z')
-      }
+      scan_results = { test_letter_matches: ('A'..'Z'), app_letter_matches: ('A'..'Z') }
 
       ABCing::Renderer.new(scan_results).render
     end
