@@ -13,8 +13,8 @@ module ABCing
     private
 
     def test_class_results
-      app_class_names.each do |a|
-        @test_directories.collect {|t| test_class_names a }
+      app_class_names.collect do |a|
+        @test_directories.collect { |t| test_class_names a }
       end
     end
 
