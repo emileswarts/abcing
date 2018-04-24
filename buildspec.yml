@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing RSpec...
+      - bundle install
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Ruby code...
+      - rspec
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - README.md
