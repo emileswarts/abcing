@@ -12,5 +12,6 @@ phases:
     commands:
       - echo Build completed on `date`
 artifacts:
+  base-directory: $CODEBUILD_SRC_DIR
   files:
     - README.md
